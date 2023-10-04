@@ -8,7 +8,7 @@ char *dec_2_bin(int num)
     int i = 0;
     for(;i < 32;++i)
     {
-        if(i > 0 && i % 4 == 0)
+        if(i > 0 && i % 8 == 0)
             bin_val[idx--] = ' '; // Add Space
         if((num & 1) == 1)
             bin_val[idx--] = '1';
