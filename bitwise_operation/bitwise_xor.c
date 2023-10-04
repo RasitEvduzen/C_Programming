@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+
 char *dec_2_bin(int num)
 {
     char *bin_val = (char*)malloc(36); // 4 Byte + 3 space + Null 
@@ -27,7 +28,7 @@ int main(int argc, char **argv)
     printf("Enter two integers: \n");
     scanf("%d %d",&x,&y);
 
-    result = x | y;
-    printf("----- Bitwise OR -----\n");
+    result = x ^ y;
+    printf("----- Bitwise XOR -----\n");
     printf("%-4d -> %s\n%-4d -> %s\n%-4d -> %s",x,dec_2_bin(x),y,dec_2_bin(y),result,dec_2_bin(result));
 }

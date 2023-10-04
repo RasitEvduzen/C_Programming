@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+
 char *dec_2_bin(int num)
 {
     char *bin_val = (char*)malloc(36); // 4 Byte + 3 space + Null 
@@ -22,12 +23,21 @@ char *dec_2_bin(int num)
 
 int main(int argc, char **argv)
 {
-    int x,y;
-    int result;
-    printf("Enter two integers: \n");
-    scanf("%d %d",&x,&y);
+    int x,n;
+    int l_shift,r_shift;
 
-    result = x | y;
-    printf("----- Bitwise OR -----\n");
-    printf("%-4d -> %s\n%-4d -> %s\n%-4d -> %s",x,dec_2_bin(x),y,dec_2_bin(y),result,dec_2_bin(result));
+    printf("Enter integer: \n");
+    scanf("%d",&x);
+    printf("Enter n digit shift value: \n");
+    scanf("%d",&n);
+
+
+    
+    printf("----- Bitwise N Bit Left Shift -----\n");
+    l_shift = x << n;
+    printf("%-4d -> %s\n%-4d -> %s",x,dec_2_bin(x),l_shift,dec_2_bin(l_shift));
+
+    printf("\n----- Bitwise N Bit Right Shift -----\n");
+    r_shift = x >> n;
+    printf("%-4d -> %s\n%-4d -> %s",x,dec_2_bin(x),r_shift,dec_2_bin(r_shift));
 }
