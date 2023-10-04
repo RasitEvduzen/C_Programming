@@ -3,7 +3,7 @@
 
 char *dec_2_bin(int num)
 {
-    char *bin_val = (char*)malloc(36); // 4 Byte + 3 space + Null 
+    char *bin_val = (char*)malloc(36); // 32 Byte for value + 3 Byte for space character + 1 Byte for Null Character
     int idx = 34;
     int i = 0;
     for(;i < 32;++i)
