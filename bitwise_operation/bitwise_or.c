@@ -2,7 +2,7 @@
 #include<stdlib.h>
 
 
-char *decimal_2_bin(int num)
+char *dec_2_bin(int num)
 {
     char *bin_val = (char*)malloc(33); // 4 Byte + Null 
     int idx = 31;
@@ -30,5 +30,5 @@ int main(int argc, char **argv)
 
     result = x | y;
     printf("----- Bitwise OR -----\n");
-    printf("%-4d -> %s\n%-4d -> %s\n%-4d -> %s",x,decimal_2_bin(x),y,decimal_2_bin(y),result,decimal_2_bin(result));
+    printf("%-4d -> %s\n%-4d -> %s\n%-4d -> %s",x,dec_2_bin(x),y,dec_2_bin(y),result,dec_2_bin(result));
 }
