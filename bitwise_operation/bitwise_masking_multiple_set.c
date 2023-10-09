@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-
+#define MASK_SET 0x0F // 0000 1111
 
 char *dec_2_bin(int num)
 {
@@ -23,17 +23,14 @@ char *dec_2_bin(int num)
 
 int main(int argc, char **argv)
 {
-    int x,n;
-    int result;
+    int x,result;
     printf("Enter an integer: \n");
     scanf("%d",&x);
 
-    printf("Enter bit position: \n");
-    scanf("%d",&n);
 
-    // Checking a Bit 
-    result = (x & (1 << n)) != 0;
-    printf("----- Bitwise Checking -----\n");
-    printf("Checking Bit %-4d of %-4d  (%s) -> (%s)\n",n,x,dec_2_bin(x),result ? "Set" : "Not Set");
+    // Masking Bit Multiple Setting 
+    result = x | MASK_SET;
+    printf("----- Bitwise Masking Setting Multiple Bit -----\n");
+    printf("%-4d -> (%s) Mask Value (%x)  %-4d -> (%s) \n",x,dec_2_bin(x),MASK_SET,result,dec_2_bin(result));
     return 0;
 }

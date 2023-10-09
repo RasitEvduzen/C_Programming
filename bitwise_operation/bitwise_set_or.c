@@ -35,4 +35,5 @@ int main(int argc, char **argv)
     result = x | (1 << n);
     printf("----- Bitwise Setting -----\n");
     printf("Setting Bit %-4d of %-4d  (%s) -> New Value %-4d  (%s)\n",n,x,dec_2_bin(x),result,dec_2_bin(result));
+    return 0;
 }

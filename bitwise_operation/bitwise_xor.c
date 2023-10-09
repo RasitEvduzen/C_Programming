@@ -31,4 +31,5 @@ int main(int argc, char **argv)
     result = x ^ y;
     printf("----- Bitwise XOR -----\n");
     printf("%-4d -> %s\n%-4d -> %s\n%-4d -> %s",x,dec_2_bin(x),y,dec_2_bin(y),result,dec_2_bin(result));
+    return 0;
 }

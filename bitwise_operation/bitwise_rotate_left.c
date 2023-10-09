@@ -25,15 +25,13 @@ int main(int argc, char **argv)
 {
     int x,n;
     int result;
-    printf("Enter an integer: \n");
+    printf("Enter an integers: \n");
     scanf("%d",&x);
-
-    printf("Enter bit position: \n");
+    printf("Enter number of position to rotate: \n");
     scanf("%d",&n);
 
-    // Checking a Bit 
-    result = (x & (1 << n)) != 0;
-    printf("----- Bitwise Checking -----\n");
-    printf("Checking Bit %-4d of %-4d  (%s) -> (%s)\n",n,x,dec_2_bin(x),result ? "Set" : "Not Set");
+    result = (x << n) | (x >> (sizeof(x) * 8 - n));
+    printf("----- Bitwise Left Rotate -----\n");
+    printf("Rotate %-4d -> %s Left by %-4d position: %-4d (%s)  ",x,dec_2_bin(x),n,result,dec_2_bin(result));
     return 0;
 }

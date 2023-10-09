@@ -23,17 +23,19 @@ char *dec_2_bin(int num)
 
 int main(int argc, char **argv)
 {
-    int x,n;
-    int result;
-    printf("Enter an integer: \n");
+    int x;
+    int mul,div;
+    printf("Enter an integers: \n");
     scanf("%d",&x);
 
-    printf("Enter bit position: \n");
-    scanf("%d",&n);
 
-    // Checking a Bit 
-    result = (x & (1 << n)) != 0;
-    printf("----- Bitwise Checking -----\n");
-    printf("Checking Bit %-4d of %-4d  (%s) -> (%s)\n",n,x,dec_2_bin(x),result ? "Set" : "Not Set");
+    mul = x << 1;
+    printf("----- Bitwise Multiply 2 -----\n");
+    printf("%-4d -> %s Multiplying 2 :  %-4d -> (%s)\n",x,dec_2_bin(x),mul,dec_2_bin(mul));
+
+    div = x >> 1;
+    printf("----- Bitwise Divide 2 -----\n");
+    printf("%-4d -> %s Dividing 2 :  %-4d -> (%s)\n",x,dec_2_bin(x),div,dec_2_bin(div));
+
     return 0;
 }

@@ -40,4 +40,5 @@ int main(int argc, char **argv)
     printf("\n----- Bitwise N Bit Right Shift -----\n");
     r_shift = x >> n;
     printf("%-4d -> %s\n%-4d -> %s",x,dec_2_bin(x),r_shift,dec_2_bin(r_shift));
+    return 0;
 }

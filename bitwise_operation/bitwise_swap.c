@@ -42,5 +42,5 @@ int main(int argc, char **argv)
 
     printf("----- After Swap -----\n");
     printf("%-4d -> %s\n%-4d -> %s\n",x,dec_2_bin(x),y,dec_2_bin(y));
-
+    return 0;
 }

@@ -23,17 +23,16 @@ char *dec_2_bin(int num)
 
 int main(int argc, char **argv)
 {
-    int x,n;
-    int result;
+    int x,result;
+    int mask;
     printf("Enter an integer: \n");
     scanf("%d",&x);
+    printf("Enter a mask: \n");
+    scanf("%d",&mask);
 
-    printf("Enter bit position: \n");
-    scanf("%d",&n);
-
-    // Checking a Bit 
-    result = (x & (1 << n)) != 0;
-    printf("----- Bitwise Checking -----\n");
-    printf("Checking Bit %-4d of %-4d  (%s) -> (%s)\n",n,x,dec_2_bin(x),result ? "Set" : "Not Set");
+    // Masking Bit
+    result = x & mask;
+    printf("----- Bitwise Masking -----\n");
+    printf("%-4d -> (%s) MASKING (AND)  %-4d -> (%s) = %-4d -> (%s)\n",x,dec_2_bin(x),mask,dec_2_bin(mask),result,dec_2_bin(result));
     return 0;
 }

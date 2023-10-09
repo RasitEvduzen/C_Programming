@@ -31,4 +31,5 @@ int main(int argc, char **argv)
     result = ~x;
     printf("----- Bitwise NOT -----\n");
     printf("%-4d -> %s\n%-4d -> %s\n",x,dec_2_bin(x),result,dec_2_bin(result));
+    return 0;
 }
