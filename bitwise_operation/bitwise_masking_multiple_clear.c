@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-#define MASK_CLEAR 0xF0 // 0000 1111
+#define MASK_CLEAR 0xF0 // 1111 0000
 
 char *dec_2_bin(int num)
 {
