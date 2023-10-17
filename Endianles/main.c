@@ -1,7 +1,5 @@
 #include <stdio.h>
 #include <inttypes.h>
-#include <stdio.h>
-
 /*
 little endian
     higher memory
@@ -21,7 +19,6 @@ big endian
  |
 &data
 */
-
 int main()
 {
    unsigned int i = 1;          // 00000000 00000000 00000000 00000001 -> 0x 00 00 00 01      "4Byte Unsigned Int"
