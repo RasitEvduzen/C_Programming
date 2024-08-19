@@ -38,15 +38,14 @@ DATATYPE *getp_item(HLINKLIST hlinklist,size_t idx);
 void remove_node(HLINKLIST hlinklist,NODE *node);
 void clear_link_list(HLINKLIST hlinklist);
 void destroy_link_list(HLINKLIST hlinklist);
-bool walk_link_list(HLINKLIST hlinklist, bool(*proc)(NODE *));
-bool walk_link_list_rev(HLINKLIST hlinklist, bool(*proc)(NODE *));
+bool walk_link_list(HLINKLIST hlinklist, bool(*proc)(DATATYPE *));
+bool walk_link_list_rev(HLINKLIST hlinklist, bool(*proc)(DATATYPE *));
 
 /* Inline Functions */
 static inline size_t count_link_list(HLINKLIST hlinklist)
 {
     return hlinklist->count;
 }
-
 
 
 #endif // LINKLIST_H
