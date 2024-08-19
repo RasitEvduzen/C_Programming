@@ -36,7 +36,7 @@ void remove_next(HLINKLIST hlinklist,NODE *node);
 void remove_head(HLINKLIST hlinklist);
 void clear_link_list(HLINKLIST hlinklist);
 bool destroy_link_list(HLINKLIST hlinklist);
-bool walk_link_list(HLINKLIST hlinklist, bool(*proc)(NODE *));
+bool walk_link_list(HLINKLIST hlinklist, bool(*proc)(DATATYPE *));
 
 /* Inline Functions */
 static inline size_t count_link_list(HLINKLIST hlinklist)

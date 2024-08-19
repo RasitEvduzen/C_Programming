@@ -4,7 +4,7 @@
 
 
 /* Static Functions Prototypes */
-static bool disp(NODE *node);
+static bool disp(DATATYPE *val);
 
 /* Function Definitions */
 HLINKLIST create_link_list(void)
@@ -119,20 +119,20 @@ bool destroy_link_list(HLINKLIST hlinklist)
     return true;
 }
 
-bool walk_link_list(HLINKLIST hlinklist, bool(*proc)(NODE *))
+bool walk_link_list(HLINKLIST hlinklist, bool(*proc)(DATATYPE *))
 {
     if(proc == NULL)
         proc = &disp;
     for (NODE *node = hlinklist->head.next; node != &hlinklist->head; node = node->next)
-        if(!proc(node))
+        if(!proc(&node->val))
             return false;
     putchar('\n');
     return true;
 }
 
-static bool disp(NODE *node)
+static bool disp(DATATYPE *val)
 {
-    printf("%d ", node->val);
+    printf("%d ", *val);
     fflush(stdout);
     return true;
 }
