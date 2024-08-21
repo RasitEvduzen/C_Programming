@@ -4,7 +4,6 @@
 #include <stdbool.h>
 #include "SingleLinkList.h"
 
-void buffer_fflush(void);
 
 int main(void)
 {
@@ -29,7 +28,7 @@ int main(void)
 			break;
 		printf("No: ");
 		scanf("%d", &per.no);
-		buffer_fflush();
+		clear_buffer();
 		addp_tail(hlinklist, &per);
 	}
     printf("------------------------\n");
@@ -38,11 +37,4 @@ int main(void)
         printf("Single Link List Destroyed!\n");
 
 	return 0;
-}
-
-void buffer_fflush(void)
-{
-    int ch;
-    while ((ch = getchar()) != '\n' && ch != EOF)
-        ;
 }

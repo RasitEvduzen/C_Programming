@@ -84,6 +84,12 @@ void clear_queue(HQUEUE hqueue)
 	hqueue->head = 0;
 	hqueue->tail = 0;
 }
+void clear_buffer(void)
+{
+	int ch;
+	while ((ch = getchar()) != '\n' && ch != EOF)
+	;	
+}
 
 void destroy_queue(HQUEUE hqueue)
 {
@@ -95,7 +101,8 @@ void disp_queue(HQUEUE hqueue)
 {
     for(size_t i=0; i<hqueue->count;++i){
 	printf("%d ", hqueue->queue[i]);
-	fflush(stdout);
+	clear_buffer();
 	}
     putchar('\n');
 }
+

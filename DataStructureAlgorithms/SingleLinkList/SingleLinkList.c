@@ -164,9 +164,16 @@ bool walk_link_list(HLINKLIST hlinklist, bool(*proc)(DATATYPE *))
     return true;
 }
 
+void clear_buffer(void)
+{
+	int ch;
+	while ((ch = getchar()) != '\n' && ch != EOF)
+	;	
+}
+
 static bool disp(DATATYPE *val)
 {
     printf("%d ", *val);
-    fflush(stdout);
+    clear_buffer();
     return true;
 }

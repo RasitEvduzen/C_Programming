@@ -28,7 +28,7 @@ size_t insertp_darray(HDARRAY hdarray, size_t index, const DATATYPE *val);
 size_t remove_darray(HDARRAY hdarray, size_t index);
 void print_darray(HDARRAY hdarray);
 size_t reserve_darray(HDARRAY hdarray, size_t newcap);
-
+void clear_buffer(void);
 
 /* Inline Function Definitions */
 

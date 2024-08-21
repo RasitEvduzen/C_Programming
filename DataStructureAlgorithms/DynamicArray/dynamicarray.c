@@ -120,6 +120,13 @@ static int reallocate(HDARRAY hdarray, size_t newcapacity)
     return 0;
 }
 
+void clear_buffer(void)
+{
+	int ch;
+	while ((ch = getchar()) != '\n' && ch != EOF)
+	;	
+}
+
 void print_darray(HDARRAY hdarray)
 {
     for(int i = 0; i < count_darray(hdarray); ++i)
