@@ -8,6 +8,7 @@
 int main()
 {
 	HSTACK t_stack;
+	DATATYPE val;
 
 	if ((t_stack = stack_create()) == NULL)
 	{
@@ -22,7 +23,6 @@ int main()
 			printf("\n\n****************************** PUSH ***********************\n\n\n");
 			printf("PUSH DATA\n");
 			stack_display(t_stack);
-			printf("Last Element: %d\n", stack_peep(t_stack));
 			printf("Stack Size: %zu\n", stack_size(t_stack));
 			printf("Stack Length: %zu\n", stack_length(t_stack));
 		}
@@ -35,19 +35,18 @@ int main()
 
 	
 
-	while (stack_pop(t_stack))
-	{
+	while (stack_pop(t_stack, &val))
+	{ 
 		printf("\n\n********************** POP *************************************\n\n\n");
 		printf("POP DATA\n");
 		stack_display(t_stack);
-		printf("Last Element: %d\n", stack_peep(t_stack));
+		printf("Popped Element: %d\n", val);
 		printf("Stack Size: %zu\n", stack_size(t_stack));
 		printf("Stack Length: %zu\n", stack_length(t_stack));
 
 	}
 
 	stack_clear(t_stack);
-	//stack_peep(t_stack);
 	stack_destroy(t_stack);
 
 	if (t_stack == NULL)
