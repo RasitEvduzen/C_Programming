@@ -20,11 +20,20 @@ int main(void)
             fprintf(stderr,"Cannot Push Stack!\n");
             exit(EXIT_FAILURE);
         }
-    disp_stack(hstack);
+    if(!disp_stack(hstack)){
+        fprintf(stderr,"Stack Empty!\n");
+        exit(EXIT_FAILURE);
+    }
 
-    while(!isempty_stack(hstack)){
+    for(size_t i = 0; i < 10; ++i){
         pop_stack(hstack,&val);
         printf("%d ",val);
+    }
+    printf("\n----------------\n");
+    
+    if(!disp_stack(hstack)){
+        fprintf(stderr,"Stack Empty!\n");
+        exit(EXIT_FAILURE);
     }
     //-----------------------------------------------
     //-----------------------------------------------
