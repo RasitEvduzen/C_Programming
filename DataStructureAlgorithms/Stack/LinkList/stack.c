@@ -13,7 +13,6 @@ HSTACK stack_create(void)
 
 	hstack->count = 0;
 	hstack->head = NULL;
-	hstack->tail = NULL;
 
 	return hstack;
 }
@@ -26,23 +25,19 @@ bool stack_push(HSTACK hstack, DATATYPE val)
 
 	new_node->val = val;
 	new_node->next = hstack->head;
-
-	if (hstack->head == NULL)
-		hstack->tail = new_node;
-
 	hstack->head = new_node;
 	++hstack->count;
-
 
 	return true;
 }
 
-bool stack_pop(HSTACK hstack)
+bool stack_pop(HSTACK hstack, DATATYPE* val )
 {
 	NODE* temp_node;
 	if (hstack->head == NULL)
 		return false;
 
+	*val = hstack->head->val;
 	temp_node = hstack->head;
 	hstack->head = hstack->head->next;
 	--hstack->count;
@@ -51,14 +46,7 @@ bool stack_pop(HSTACK hstack)
 	return true;
 
 }
-DATATYPE stack_peep(HSTACK hstack)
-{
-	if (hstack->head == NULL)
-		exit(EXIT_FAILURE);
 
-	return hstack->head->val;
-
-}
 
 size_t stack_size(HSTACK hstack)
 {
@@ -104,3 +92,4 @@ void stack_destroy(HSTACK hstack)
 	free(hstack);
 	hstack = NULL;
 }
+
