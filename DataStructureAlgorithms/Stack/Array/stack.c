@@ -35,7 +35,7 @@ bool push_stack(HSTACK hstack,DATATYPE val)
 bool pushp_stack(HSTACK hstack,DATATYPE *val)
 {
     if(hstack->sp == hstack->stack)
-        return false;
+        return false;  // Stack Overflow
     *--hstack->sp = *val;
     ++hstack->count;
     return true;
@@ -44,7 +44,7 @@ bool pushp_stack(HSTACK hstack,DATATYPE *val)
 bool pop_stack(HSTACK hstack,DATATYPE *val)
 {
     if(!hstack->count)
-        return false;
+        return false;  // Stack Underflow
     *val = *hstack->sp++;
     --hstack->count;
     return true;
@@ -62,12 +62,17 @@ void destroy_stack(HSTACK hstack)
     free(hstack);
 }
 
-void disp_stack(HSTACK hstack)
+bool disp_stack(HSTACK hstack)
 {
+    if(!hstack->count)
+        return false;
+
     for(size_t i = 0; i < hstack->count; ++i){
         printf("%d ",*hstack->sp++);
     }
+    hstack->sp = hstack->stack;
     putchar('\n');
+    return true;
 }
 
 void clear_buffer(void)

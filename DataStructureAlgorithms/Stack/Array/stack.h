@@ -22,7 +22,7 @@ bool pushp_stack(HSTACK hstack,DATATYPE *val);
 bool pop_stack(HSTACK hstack,DATATYPE *val);
 void clear_stack(HSTACK hstack);
 void destroy_stack(HSTACK hstack);
-void disp_stack(HSTACK hstack);
+bool disp_stack(HSTACK hstack);
 void clear_buffer(void);
 /* Inline Function Definition */
 
