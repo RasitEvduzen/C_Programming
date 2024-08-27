@@ -6,8 +6,8 @@
 void bit_print1(int ival)
 {
     for(int i = (int)(sizeof(ival) * CHAR_BIT - 1); i >= 0; --i)
-	    if(!(i % CHAR_BIT) && i) putchar(' ');
-	    else putchar(ival >> i & 0x0001 ? '1' : '0');
+	if(!(i % CHAR_BIT) && i) putchar(ival >> i & 0x0001 ? '1' : '0'),putchar(' ');
+	else putchar(ival >> i & 0x0001 ? '1' : '0');
     putchar('\n');
 }
 
