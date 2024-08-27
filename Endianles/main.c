@@ -19,6 +19,9 @@ big endian
  |
 &data
 */
+
+#define endian_conv_16(x)   (((x) >> 8) && 0xFF) | ((x) << 8)
+
 int main()
 {
    unsigned int i = 1;          // 00000000 00000000 00000000 00000001 -> 0x 00 00 00 01      "4Byte Unsigned Int"
