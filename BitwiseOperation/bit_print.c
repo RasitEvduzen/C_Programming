@@ -14,8 +14,8 @@ void bit_print1(int ival)
 void bit_print2(int ival)
 {
     unsigned int mask = ~(~0u >> 1);
-    while (mask)
-        putchar(ival & mask ? '1' : '0'),mask >>= 1;
+    while (mask >>= 1)
+        putchar(ival & mask ? '1' : '0');
     putchar('\n');
 }
 
