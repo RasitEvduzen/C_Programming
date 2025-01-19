@@ -1,17 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "opaque.h"
+#include "forward.h"
 
 
 int main(void)
 {
-    POpaquePointer pOpaquePointer = CreateOpaquePointer();
-    if(!pOpaquePointer)
+    PUserType pUserType = CreateUserType();
+    if(!pUserType)
         fprintf(stderr, "Failed to create opaque pointer\n");
     else
     {
-        DoSomethingWithOpaquePointer(pOpaquePointer);
-        DestroyOpaquePointer(pOpaquePointer);
+        DoSomethingWithUserType(pUserType);
+        DestroyUserType(pUserType);
     }
 
     return 0;
