@@ -4,7 +4,7 @@
 #include <stddef.h>
 #include <stdbool.h>
 
-/* Type Declararions */
+/* Type Declerations */
 
 typedef struct tagNODE {
 	struct tagNODE *left;
@@ -27,7 +27,7 @@ typedef struct tagBTREE {
 	int (*compare)(const void *, const void *);
 } BTREE, *HBTREE;
 
-/* Function Prototypes */
+/* Function Definitions */
 
 HBTREE create_bt(size_t key_size, size_t value_size, int (*compare)(const void *, const void *));
 bool insert_item_bt(HBTREE hbtree, const void *key, const void *value);
@@ -40,7 +40,7 @@ bool delete_bt(HBTREE hbtree, const void *key);
 void clear_bt(HBTREE hbtree);
 void destroy_bt(HBTREE hbtree);
 
-/* inline Function Fefinitions */
+/* inline Function Definitions */
 
 static inline size_t count_bt(HBTREE hbtree)
 {
