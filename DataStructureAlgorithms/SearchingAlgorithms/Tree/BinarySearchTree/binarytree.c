@@ -59,8 +59,8 @@ bool insert_item_btree(HBTREE hbtree, int key, const PERSON *val)
             return true;
         }
     }
-    if(key < parent_node->key) parent_node->left = node;
-    else parent_node->right = node;
+    if(key < parent_node->key) parent_node->left = new_node;
+    else parent_node->right = new_node;
     ++hbtree->count;
     return true; 
 }
